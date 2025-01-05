@@ -1,76 +1,77 @@
-# Gerenciador de Arquivos Duplicados
-## Descrição
-Este é um programa desenvolvido em Python com interface gráfica para verificar, identificar e gerenciar arquivos duplicados em uma pasta selecionada. Ele utiliza hash (xxHash) para identificar arquivos duplicados de maneira eficiente, oferecendo opções para movê-los automaticamente ou com base na seleção do usuário.
-## Funcionalidades 💡
-- **Verificar arquivos duplicados por hash**: O programa calcula os hashes (xxHash) dos arquivos para identificar duplicatas.
-- **Exibir duplicatas em forma de lista paginada**: Os resultados são exibidos com paginação, facilitando a navegação entre vários arquivos duplicados.
-- **Mover arquivos duplicados automaticamente**: É possível mover duplicatas para uma subpasta chamada `duplicados`.
-- **Mover arquivos com base em seleção manual**: O usuário pode marcar os arquivos duplicados desejados e movê-los para uma pasta separada.
-- **Interface gráfica amigável**: Construída com o módulo Tkinter para facilitar a interação do usuário.
+# Duplicate File Manager
+## Description
+This is a Python program with a graphical interface to verify, identify, and manage duplicate files in a selected folder. It uses hashing (xxHash) to efficiently detect duplicate files, offering options to move them either automatically or based on the user's selection.
+## Features 💡
+- **Scan for duplicate files by hash**: The program calculates the hashes (xxHash) of files to identify duplicates.
+- **Display duplicates in a paginated list**: Results are displayed with pagination for easier navigation through multiple duplicates.
+- **Automatically move duplicate files**: Duplicates can be moved to a subfolder named `duplicados`.
+- **Move files based on manual selection**: Users can select specific duplicate files to move to a separate folder.
+- **User-friendly graphical interface**: Built with Tkinter to make it easy to use.
 
-## Tecnologias utilizadas 🚀
+## Tech Stack 🚀
 - Python 3.x
-- Interface gráfica com **Tkinter**
-- Manipulação de arquivos com **os**, **shutil**
-- **xxHash** para hashing rápido
-- Threads com **multiprocessing.pool.ThreadPool** para processar arquivos em paralelo
+- Graphical interface created with **Tkinter**
+- File management with **os**, **shutil**
+- **xxHash** for fast hashing
+- Threads for parallel file processing with **multiprocessing.pool.ThreadPool**
 
-## Como usar?
-1. **Instale as dependências necessárias**: Certifique-se de ter instalado o módulo `xxhash` na sua máquina:
+## How to Use
+1. **Install the required dependencies**: Make sure to have the `xxhash` module installed:
 ``` bash
    pip install xxhash
 ```
-1. **Execute o programa**: Basta executar o arquivo Python:
+1. **Run the program**: Execute the Python file:
 ``` bash
-   python gerenciador_duplicados.py
+   python duplicate_manager.py
 ```
-1. **Selecione a pasta**: Clique no botão "Selecionar Pasta" na interface e selecione a pasta que deseja analisar.
-2. **Aguarde o processamento**: O programa analisará os arquivos utilizando hashes para identificar duplicados e mostrará os resultados em uma interface paginada.
-3. **Gerencie duplicados**:
-    - Você pode mover arquivos automaticamente para uma subpasta chamada `duplicados`.
-    - Ou mover arquivos específicos marcando-os manualmente na interface.
+1. **Select a folder**: Click on the "Select Folder" button in the interface and choose the folder you want to scan.
+2. **Wait for processing**: The program will analyze the files using hashing to detect duplicates and display the results in a paginated interface.
+3. **Manage the duplicates**:
+    - You can move files automatically to a subfolder named `duplicados`.
+    - Or move specific files by marking them manually in the interface.
 
-## Estrutura do Código 🛠
-### Principais funções do programa:
-1. **`calcular_xxhash_completo(file_path)`**: Calcula o hash completo de um arquivo utilizando o algoritmo xxHash para identificar duplicatas eficientemente.
-2. **`obter_data_criacao_pasta(filepath)`**: Obtém a data de criação da pasta que contém o arquivo.
+## Code Structure 🛠
+### Key Functions
+1. **`calcular_xxhash_completo(file_path)`**: Calculates the full hash of a file using the xxHash algorithm, ensuring efficient duplicate detection.
+2. **`obter_data_criacao_pasta(filepath)`**: Gets the creation date of the folder containing the file.
 
-### Classe principal:
-A lógica principal está encapsulada na classe `AppDuplicados`.
-**Componentes principais**:
-- **Interface gráfica**:
-    - Criada com Tkinter, inclui barra de progresso, botões de navegação, e seleção de arquivos duplicados.
+### Primary Class: `AppDuplicados`
+The main logic is encapsulated in the `AppDuplicados` class.
+**Main Components**:
+- **Graphical Interface**:
+    - Built with Tkinter, includes a progress bar, navigation buttons, and a selection for duplicate files.
 
-- **Paginação**:
-    - A classe suporta paginação para melhor exibição de arquivos duplicados encontrados.
+- **Pagination**:
+    - The class supports pagination for better handling and viewing of a large number of duplicate files.
 
-- **Funções de ação**:
-    - Verificar duplicados
-    - Mover duplicados automaticamente
-    - Mover duplicados manualmente com base na seleção.
+- **Action Functions**:
+    - Verifying duplicates
+    - Automatically moving files
+    - Manually moving duplicates based on user selection
 
-**Principais métodos**:
-- `verificar_duplicados()`: Faz a análise dos arquivos para encontrar duplicados.
-- `mover_duplicados_por_pasta()`: Move duplicatas automaticamente baseando-se na data de criação da pasta.
-- `mover_arquivos()`: Move arquivos manualmente, conforme seleção do usuário.
-- `exibir_pagina()`: Exibe os resultados em uma lista paginada.
+**Key Methods**:
+- `verificar_duplicados()`: Analyzes the files to detect duplicates.
+- `mover_duplicados_por_pasta()`: Automatically moves duplicate files based on the folder creation date.
+- `mover_arquivos()`: Moves files manually, as selected by the user.
+- `exibir_pagina()`: Displays results in a paginated list.
 
-## Exemplo de execução
-Interface principal ao executar o programa:
-1. **Tela inicial**:
-    - Botão para selecionar a pasta a ser analisada.
-    - Barra de progresso para indicar processamento.
+## Example Execution
+Below are the main screens during the program's execution:
+1. **Initial Screen**:
+    - A button to select the folder for analysis.
+    - A progress bar to indicate scanning progress.
 
-2. **Resultados**: Exibição de duplicados em formato paginado com checkboxes para facilitar a seleção.
-3. **Opções para mover duplicados**:
-    - Baseado em seleção manual.
-    - Baseado em data de criação da pasta, automaticamente.
+2. **Results Screen**: Displays duplicates in a paginated format with checkboxes for easy selection.
+3. **Options for Managing Duplicates**:
+    - Automatically move duplicates to a specific folder.
+    - Move duplicates manually based on user selection.
 
-## Melhorias futuras ✨
-- Adicionar opção para excluir arquivos duplicados diretamente da interface.
-- Suporte para exportar os resultados em CSV ou JSON.
-- Suporte para análise recursiva mais avançada (configurações personalizáveis).
-- Melhor feedback visual, como indicadores do progresso do hash em tempo real.
+## Future Improvements ✨
+- Add options to delete duplicate files directly from the interface.
+- Support for exporting results in CSV or JSON formats.
+- Improved recursive analysis with customizable settings.
+- Better visual feedback, such as real-time hash processing indicators.
 
-## Licença 📜
-Este projeto é open-source e está licenciado sob a licença [MIT]().
+## License 📜
+This project is open-source and licensed under the [MIT License]().
+Enjoy and make good use of it! 😊
