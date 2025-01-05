@@ -1,0 +1,13 @@
+Arquivos duplicados encontrados:
+Hash: 07c2356711dcc018deeb5a5582d9b6430874a76cea1a79779d37998d32c7bdc2
+  - C:/Vinicius/Fotografia - temp\Backup S21 - 2024\20241202_112612.jpg
+  - C:/Vinicius/Fotografia - temp\Backup S21 - 2024\dulicado teste\20241202_112612.jpg
+
+Hash: 10dbd4238b0e33ff2feb04eb7a30b80f5f6798377bac197406711fcee76e7e36
+  - C:/Vinicius/Fotografia - temp\Backup S21 - 2024\20241208_143403.jpg
+  - C:/Vinicius/Fotografia - temp\Backup S21 - 2024\dulicado teste\20241208_143403.jpg
+
+Hash: 4b04b5edc773bc856eda136af969b0ade03b586682dc51d5e18f9a718458461c
+  - C:/Vinicius/Fotografia - temp\Backup S21 - 2024\20241218_174838.jpg
+  - C:/Vinicius/Fotografia - temp\Backup S21 - 2024\dulicado teste\20241218_174838.jpg
+
